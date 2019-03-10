@@ -32,6 +32,20 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
+		ExceptionMethods em = new ExceptionMethods();
+		try {
+			double d = em.divide(9.0, 3.0);
+			assertEquals(3.0, d);
+			d = em.divide(9.0, 0.0);
+			assertEquals(3.0, d);
+			
+			fail("IllegalArgumentException not thrown");
+		}
+		catch(IllegalArgumentException e) {
+			e.printStackTrace();
+			assertEquals(3.0, em.divide(9.0, 3.0));
+		}
+			
 		
 	}
 	
