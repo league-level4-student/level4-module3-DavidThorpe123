@@ -13,10 +13,14 @@ public class ExceptionMethods {
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
 		//   String and returns the reverse of that String. It should throw an IllegalStateException
 		//   if the String passed in is empty
-	//public String reverseString(String s) {
-	//	for (int i = s.length() - 1; i >= 0; i--) {
-			
-	//	}
-	//}
-	
+	public String reverseString(String s) throws IllegalStateException {
+		if (s.isEmpty()) {
+			throw new IllegalStateException();
+		}
+		String reverse = "";
+		for (int i = s.length() - 1; i >= 0; i--) {
+			reverse += s.charAt(i);
+		}
+		return reverse;
+	}
 }

@@ -56,7 +56,18 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		ExceptionMethods em = new ExceptionMethods();
+		try {
+			String reverse = em.reverseString("Hello");
+			assertEquals("olleH", reverse);
+			reverse = em.reverseString("");
+			assertEquals("olleH", reverse);
+			fail("IllegalStateException not thrown");
+		}
+		catch(IllegalStateException e) {
+			e.printStackTrace();
+			assertEquals("olleH", em.reverseString("Hello"));
+		}
 	}
 	
 	
